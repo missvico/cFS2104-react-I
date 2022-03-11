@@ -1,29 +1,22 @@
 import {useState, useEffect} from "react";
+import {useLocation} from 'react-router-dom'
 import axios from "axios";
 import List from './List';
 import Paginate from './Paginate';
 
 function CharacterList(){
     const [characters, setCharacters] = useState([])
-    const [currPage, setCurrPage] = useState(1)
+    const location = useLocation();
 
-    useEffect(()=>{
-        console.log("se monto el componente en la pagina", currPage)
-        
+    useEffect(()=>{        
         axios({
-            url: `https://swapi.dev/api/people/?page=${currPage}`
+            url: `https://swapi.dev/api/people/${location.search}`
         }).then(result => setCharacters(result.data.results))
-        
-        return ()=> console.log("se desmonto el componente en la pagina", currPage)
-    },[currPage])
-
-    const handleClick = (clickedPage) => {
-        setCurrPage(clickedPage)
-    }
+    },[location.search])
 
     return(
         <div>
-            <Paginate handleClick={handleClick}/>
+            <Paginate/>
             <List characters={characters}/>
         </div>
     )

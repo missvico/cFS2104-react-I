@@ -7,7 +7,10 @@ function List(props){
            {
                props.characters.map(
                    function(character, index){
-                       return <li key={index}> <CharacterCard character={character}/> </li>
+                       return (
+                        <li key={index}> 
+                            <CharacterCard character={character}/> 
+                        </li>)
                    }
                )
            }

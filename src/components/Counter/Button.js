@@ -1,6 +1,6 @@
 function Button(props){
     return(
-        <button onClick={props.handleClick}>
+        <button className="btn btn-primary" onClick={props.handleClick}>
             {props.sign}
         </button>
     )
