@@ -2,17 +2,15 @@
 $primary: #E0752F;
 $light: #F2F4F1;
 $dark: #343434;
-$font-family-base: Roboto;
+$accordion-button-active-bg:  #E3E3E3; 
+$accordion-button-active-color: #5F6368;
+$accordion-icon-active-color: #E0752F;
 @import '~bootstrap/scss/bootstrap.scss';
 
 body {
     text-align: center;
     background-color: #ffff;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: calc(10px + 2vmin);
     color: #343434;
   }
@@ -25,4 +23,7 @@ body {
     position: fixed;
     top: 0
   }
-  
+
+// .App {
+//   background-image: url('../public/img/slider-1.png');
+// }

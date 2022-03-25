@@ -1,5 +1,5 @@
 import CharacterList from './CharacterList';
-import './index.scss';
+import './index.css';
 
 function StarWarsWiki (){
     return(
